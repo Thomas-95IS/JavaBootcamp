@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-import student.javalang.Employee;
+import student.javalang.domain.Employee;
 
 
 public class Main {

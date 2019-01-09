@@ -1,6 +1,6 @@
 build:
-	javac student/javalang/Main.java
-	jar cfm app.jar Manifest.txt student/javalang/*.class
+	javac student/javalang/*.java
+	find . -name "*.class" | xargs jar cfm app.jar Manifest.txt
 
 run:
 	java -jar app.jar

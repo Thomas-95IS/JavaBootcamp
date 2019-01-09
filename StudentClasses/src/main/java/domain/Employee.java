@@ -1,4 +1,4 @@
-package student.javalang.domain;
+package src.main.java.domain;
 
 
 public class Employee {

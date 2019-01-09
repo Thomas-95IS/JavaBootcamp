@@ -1,10 +1,10 @@
-package student.javalang;
+package src.main.java;
 
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-import student.javalang.domain.Employee;
+import src.main.java.domain.Employee;
 
 
 public class Main {

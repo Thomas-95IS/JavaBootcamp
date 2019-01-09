@@ -1,7 +1,9 @@
 package src.main.java.domain;
 
+import src.main.java.domain.stereotypes.Physical;
 
-public class Employee {
+
+public class Employee implements Physical {
     private String name;
     private int salary;
 

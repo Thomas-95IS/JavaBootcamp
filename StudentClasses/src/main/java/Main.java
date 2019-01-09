@@ -5,6 +5,8 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 import src.main.java.domain.Employee;
+import src.main.java.domain.EmployeeFactory;
+import src.main.java.business.EmployeeLogic;
 
 
 public class Main {
@@ -21,21 +23,14 @@ public class Main {
       System.out.println("Enter the salary of employee " + i);
       int salary = sc.nextInt();
 
-      employees[i] = new Employee(name, salary);
+      employees[i] = EmployeeFactory.createEmployee(name, salary);
     }
 
     /*
       Calculate the mean salary of the Employees
     */
 
-    float meanSalary = 0;
-
-    for(Employee e : employees) {
-      System.out.println("Name: " + e.getName() + "\n" + "Salary: " + e.getSalary());
-      meanSalary += e.getSalaryAsFloat();
-    }
-
-    meanSalary = meanSalary / employees.length;
+    float meanSalary = EmployeeLogic.getMeanSalary(employees);
 
     System.out.println("Mean salary: " + meanSalary);
 
@@ -43,8 +38,7 @@ public class Main {
       Find the max salary of the Employees
     */
 
-    Stream<Employee> employeeStream = Arrays.stream(employees);
-    int maxSalary = employeeStream.mapToInt(e -> e.getSalary()).max().getAsInt();
+    int maxSalary = EmployeeLogic.getMaxSalary(employees);
 
     System.out.println("Max salary: " + maxSalary);
 

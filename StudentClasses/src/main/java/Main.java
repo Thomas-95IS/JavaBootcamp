@@ -7,24 +7,13 @@ import java.util.stream.Stream;
 import src.main.java.domain.Employee;
 import src.main.java.domain.EmployeeFactory;
 import src.main.java.business.EmployeeLogic;
+import src.main.java.repository.RepositoryImplementation;
 
 
 public class Main {
   public static void main(String[] args) {
-    final int N_EMPLOYEES = 2;
-    Employee[] employees = new Employee[N_EMPLOYEES];
-
-    Scanner sc = new Scanner(System.in);
-
-    for (int i = 0; i < N_EMPLOYEES; i++) {
-      System.out.println("Enter the name of employee " + i);
-      String name = sc.next();
-
-      System.out.println("Enter the salary of employee " + i);
-      int salary = sc.nextInt();
-
-      employees[i] = EmployeeFactory.createEmployee(name, salary);
-    }
+    RepositoryImplementation repo = new RepositoryImplementation();
+    Employee[] employees = repo.getEmployees();
 
     /*
       Calculate the mean salary of the Employees
@@ -42,6 +31,5 @@ public class Main {
 
     System.out.println("Max salary: " + maxSalary);
 
-    sc.close();
   }
 }

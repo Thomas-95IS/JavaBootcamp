@@ -24,17 +24,6 @@ public class RepositoryImplementation implements RepositoryInterface {
     private static String readFile(String path, Charset encoding) {
         byte[] encoded;
 
-//        File folder = new File("src/main/resources");
-//        File[] listOfFiles = folder.listFiles();
-//
-//        for (int i = 0; i < listOfFiles.length; i++) {
-//            if (listOfFiles[i].isFile()) {
-//                System.out.println("File " + listOfFiles[i].getName());
-//            } else if (listOfFiles[i].isDirectory()) {
-//                System.out.println("Directory " + listOfFiles[i].getName());
-//            }
-//        }
-
         try {
             encoded = Files.readAllBytes(Paths.get(path));
         }
@@ -47,10 +36,9 @@ public class RepositoryImplementation implements RepositoryInterface {
     }
 
     private Employee[] castJsonToEmployees() {
-        Employee[] employees = new Employee[1];
         String jsonString = this.readFile(this.jsonPath, StandardCharsets.UTF_8);
         Gson gson = new Gson();
-        employees[0] = gson.fromJson(jsonString, Employee.class);
+        Employee[] employees = gson.fromJson(jsonString, Employee[].class);
 
         return employees;
     }

@@ -1,4 +1,10 @@
-{
-  "name": "Dan",
-  "salary": "30000"
-}
+[
+  {
+    "name": "Tom",
+    "salary": "40000"
+  },
+  {
+    "name": "Dan",
+    "salary": "30000"
+  }
+]
